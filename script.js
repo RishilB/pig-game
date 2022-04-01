@@ -58,7 +58,7 @@ btnHold.addEventListener('click', function () {
       Number(document.getElementById(`score--${activePlayer}`).textContent) +
       currentScore;
 
-    if (document.getElementById(`score--${activePlayer}`).textContent >= 100) {
+    if (document.getElementById(`score--${activePlayer}`).textContent >= 20) {
       playing = false;
       btnHold.classList.add('hidden');
       btnRoll.classList.add('hidden');
@@ -72,4 +72,17 @@ btnHold.addEventListener('click', function () {
     }
     switchPlayer();
   }
+});
+
+btnNew.addEventListener('click', function () {
+  player0.classList.remove('player--winner');
+  player1.classList.remove('player--winner');
+  player0.classList.add('player--active');
+  player1.classList.remove('player--active');
+  btnHold.classList.remove('hidden');
+  btnRoll.classList.remove('hidden');
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+  activePlayer = 0;
+  playing = true;
 });
