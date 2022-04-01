@@ -58,7 +58,7 @@ btnHold.addEventListener('click', function () {
       Number(document.getElementById(`score--${activePlayer}`).textContent) +
       currentScore;
 
-    if (document.getElementById(`score--${activePlayer}`).textContent >= 20) {
+    if (document.getElementById(`score--${activePlayer}`).textContent >= 100) {
       playing = false;
       btnHold.classList.add('hidden');
       btnRoll.classList.add('hidden');
