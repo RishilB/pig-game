@@ -13,6 +13,12 @@ const btnHold = document.querySelector('.btn--hold');
 const player0 = document.querySelector('.player--0');
 const player1 = document.querySelector('.player--1');
 
+// How to Play Elements
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const btnCloseModal = document.querySelector('.close-modal');
+const btnOpenModal = document.querySelector('.btn--how');
+
 let currentScore = 0;
 let activePlayer = 0;
 let playing = true;
@@ -22,6 +28,7 @@ score0El.textContent = 0;
 score1El.textContent = 0;
 diceEl.classList.add('hidden');
 
+// Switch Player Function
 const switchPlayer = function () {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
   currentScore = 0;
@@ -30,6 +37,7 @@ const switchPlayer = function () {
   player1.classList.toggle('player--active');
 };
 
+// Click on Roll Dice Button
 btnRoll.addEventListener('click', function () {
   if (playing) {
     // 1. Generating a Random Dice Roll
@@ -51,7 +59,7 @@ btnRoll.addEventListener('click', function () {
   }
 });
 
-// Add current Score to Total Score
+// Click on Hold Button
 btnHold.addEventListener('click', function () {
   if (playing) {
     document.getElementById(`score--${activePlayer}`).textContent =
@@ -59,6 +67,9 @@ btnHold.addEventListener('click', function () {
       currentScore;
 
     if (document.getElementById(`score--${activePlayer}`).textContent >= 100) {
+      document.getElementById(`name--${activePlayer}`).textContent = `Player ${
+        activePlayer + 1
+      } Wins`;
       playing = false;
       btnHold.classList.add('hidden');
       btnRoll.classList.add('hidden');
@@ -74,6 +85,7 @@ btnHold.addEventListener('click', function () {
   }
 });
 
+// Click on New Game Button
 btnNew.addEventListener('click', function () {
   player0.classList.remove('player--winner');
   player1.classList.remove('player--winner');
@@ -85,4 +97,34 @@ btnNew.addEventListener('click', function () {
   score1El.textContent = 0;
   activePlayer = 0;
   playing = true;
+  document.getElementById('name--0').textContent = 'Player 1';
+  document.getElementById('name--1').textContent = 'Player 2';
+});
+
+// Open How to Play Modal function
+const openModal = function () {
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+
+// Close How to Play Modal function
+const closeModal = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+
+// Open How to Play Modal
+btnOpenModal.addEventListener('click', openModal);
+
+// Close How to Play Modal
+btnCloseModal.addEventListener('click', closeModal);
+
+// Click on Overlay to Close the Modal
+overlay.addEventListener('click', closeModal);
+
+// ESC Key to Close the Modal
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
 });
