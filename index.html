@@ -29,7 +29,7 @@
 
       <img src="dice-5.png" alt="Playing dice" class="dice" />
       <button class="btn btn--new">🔄 New game</button>
-      <button class="btn btn--roll">🎲 Roll dice</button>
+      <button id="roll--btn" class="btn btn--roll">🎲 Roll dice</button>
       <button class="btn btn--hold">📥 Hold</button>
       <button class="btn btn--how">🤔 How To Play</button>
     </main>
@@ -45,8 +45,29 @@
       <hr class="hr-line"/>
       <h2 class="modal-text1">Fastest to reach the 100 Score mark will WIN THE GAME.</h2>
     </div>
+    <div class="init--modal hidden">
+      <p class="how-to-play"><h1 class="modal-title">The PIG Game</h1></p>
+      <hr class="hr-line"/>
+      <h2 class="modal-text2"><strong>🎲 🎲 Play Against 🎲 🎲</strong></h2>
+      <main class = "main--init">
+      <section class="new-game-section">
+        <h2 class="modal-text2"><strong>THE ROBOT PIG</strong></h2>
+        <img class="pig-img" src="favicon.png" alt="pig"/>
+        <button type="button" class="btn-pig-bot-1">START</button>
+      </section>
+      <section class="new-game-section">
+        <h2 class="modal-text2"><strong>ANOTHER HUMAN</strong></h2>
+        <form>
+        <input id="player-1-name" type="text" placeholder="Enter Player 1 Name" maxlength="10" name="uname" required>
+        <input id="player-2-name" type="text" placeholder="Enter Player 2 Name" maxlength="10" name="uname" required>
+        <button type="button" class="btn-pig-bot-2">START</button>
+      </form>
+      </section>
+    </main>
+    </div>
 
     <div class="overlay hidden"></div>
+    <div class="overlay-newgame hidden"></div>
     <script src="script.js"></script>
   </body>
 </html>

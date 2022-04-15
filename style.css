@@ -36,9 +36,32 @@ main {
   display: flex;
 }
 
+.main--init {
+  position: relative;
+  width: auto;
+  height: 50%;
+  background-color: #ea4f8d86;
+  /* background-color: rgba(255, 255, 255, 0.35); */
+  backdrop-filter: blur(200px);
+  filter: blur();
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+}
+
 .player {
   flex: 50%;
   padding: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.75s;
+}
+
+.new-game-section {
+  flex: 50%;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -123,6 +146,54 @@ main {
   box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
 }
 
+.btn-pig-bot-1 {
+  position: relative;
+  left: 12.3%;
+  transform: translateX(-50%);
+  color: #444;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+  top: 1rem;
+}
+
+.btn-pig-bot-2 {
+  position: relative;
+  left: 12.3%;
+  transform: translateX(-50%);
+  color: #444;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+  top: 1rem;
+}
+
 .btn::first-letter {
   font-size: 2.4rem;
   display: inline-block;
@@ -189,6 +260,17 @@ main {
   background: none;
 }
 
+.close-init-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
 .modal {
   position: absolute;
   text-align: center;
@@ -204,7 +286,33 @@ main {
   z-index: 10;
 }
 
+.init--modal {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100rem;
+
+  background-color: #f7e2e8;
+  padding: 2rem;
+  border-radius: 2px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
 .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.overlay-newgame {
   position: absolute;
   top: 0;
   left: 0;
@@ -245,6 +353,17 @@ main {
   font-weight: 100;
 }
 
+.modal-text2 {
+  display: inline-flex;
+  font-size: 2em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: 100;
+  align-self: center;
+}
+
 .hr-line {
   border-top: 1px solid #333;
 }
@@ -255,4 +374,29 @@ main {
   border: 1px solid #333;
   display: inline-flexbox;
   margin-right: 0.7rem;
+}
+
+.vertical {
+  border-left: 1px dashed #333;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  padding-top: 25rem;
+}
+
+.pig-img {
+  width: 11.5rem;
+  height: 11.5rem;
+}
+
+input[type='text'] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-family: inherit;
+  background-color: #f7e2e8;
 }
