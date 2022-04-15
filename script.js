@@ -264,20 +264,3 @@ btnHold.addEventListener('click', function () {
     switchPlayer();
   }
 });
-
-// let curr = 0;
-// let bot = Number(Math.trunc(Math.random() * 4) + 1);
-// console.log(`Bot Value is ${bot}`);
-// for (let i = 1; i <= bot; i++) {
-//   let ice = Number(Math.trunc(Math.random() * 6) + 1);
-//   if (ice !== 1) {
-//     console.log(`Dice Value is ${ice}.`);
-//     curr = curr + ice;
-//     console.log(`Current Value is ${curr}.`);
-//   } else {
-//     console.log(`Dice Value is ${ice}.`);
-//     curr = 0;
-//     console.log(`Current Value is ${curr}.`);
-//     break;
-//   }
-// }
