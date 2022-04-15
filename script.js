@@ -186,7 +186,7 @@ const switchPlayer = function () {
     player0.classList.remove('player--active');
     player1.classList.add('player--active');
     activePlayer = 1;
-    if (document.getElementById(`score--0`).textContent >= 20) {
+    if (document.getElementById(`score--0`).textContent >= 100) {
       playing = false;
       btnHold.classList.add('hidden');
       btnRoll.classList.add('hidden');
@@ -249,7 +249,7 @@ btnHold.addEventListener('click', function () {
       Number(document.getElementById(`score--${activePlayer}`).textContent) +
       currentScore;
 
-    if (document.getElementById(`score--${activePlayer}`).textContent >= 20) {
+    if (document.getElementById(`score--${activePlayer}`).textContent >= 100) {
       playing = false;
       btnHold.classList.add('hidden');
       btnRoll.classList.add('hidden');
